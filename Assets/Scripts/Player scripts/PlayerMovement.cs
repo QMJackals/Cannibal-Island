@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
+    public CharacterController controller;  //https://www.youtube.com/watch?v=_QajrabyTJc
 
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //https://www.youtube.com/watch?v=_QajrabyTJc
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
