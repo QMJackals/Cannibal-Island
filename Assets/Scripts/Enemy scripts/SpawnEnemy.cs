@@ -18,8 +18,8 @@ public class SpawnEnemy : MonoBehaviour
         // Code was inspired by this tutorial: https://subscription.packtpub.com/book/game-development/9781783553655/1/ch01lvl1sec13/creating-enemies
         for (int i = 0; i < enemyCount; i++)
         {
-            float randomX = Random.Range(-3, 4);
-            float randomZ = Random.Range(-3, 4);
+            float randomX = Random.Range(-100, 101);
+            float randomZ = Random.Range(-100, 101);
 
             Instantiate(EnemyPrefab, new Vector3(randomX, 2, randomZ), Quaternion.identity);
         }
