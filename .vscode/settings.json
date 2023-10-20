@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Cannibal-Island.sln"
+    "dotnet.defaultSolution": "Cannibal-Island.sln",
+    "dotnet.preferCSharpExtension": true
 }
