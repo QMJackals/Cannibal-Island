@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 189664553464741123}
   - component: {fileID: 8685807408789474390}
   - component: {fileID: 2909603154993945357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7275384281489740195}
   - component: {fileID: 2752873831580003189}
   - component: {fileID: 4916162411478287239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mainland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4496405789483392910}
   - component: {fileID: 4962918079690404577}
   - component: {fileID: 7542686014560888003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 2489105820561573945}
   - component: {fileID: 5458141062117994576}
   - component: {fileID: 6868392997568645913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 2242105080394603144}
   - component: {fileID: 6651765670838006914}
   - component: {fileID: 6950330039774797380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 5671590235390417961}
   - component: {fileID: 7829698596553021813}
   - component: {fileID: 4285065835694209983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6242153486934608925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 3903462425752440766}
   - component: {fileID: 7243014147736352703}
   - component: {fileID: 7756822872059692411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 3061541902979674898}
   - component: {fileID: 7612194327301406575}
   - component: {fileID: 1475713507582571299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 4168481296169552997}
   - component: {fileID: 4834212552193543645}
   - component: {fileID: 7263700290829048054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
