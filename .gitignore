@@ -74,9 +74,13 @@ crashlytics-build.properties
 .DS_STORE
 Assets/Scenes/Yesh.unity
 Assets/Scenes/Yesh.unity.meta
+Assets/Scenes/Yesh*
 Assets/Scenes/Mohammed.unity
 Assets/Scenes/Mohammed.unity.meta
+Assets/Scenes/Mohammed*
 Assets/Scenes/Sebi.unity
 Assets/Scenes/Sebi.unity.meta
+Assets/Scenes/Sebi*
 Assets/Scenes/supachaimangkud.unity
 Assets/Scenes/supachaimangkud.unity.meta
+Assets/Scenes/supachaimangkud*
