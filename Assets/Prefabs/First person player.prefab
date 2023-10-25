@@ -148,6 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2353bec19de14c629d436ed32788318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 6
+  damageDelay: 0.8
+  damageDuration: 0.4
+  looseText: {fileID: 0}
 --- !u!1 &943535864661246584
 GameObject:
   m_ObjectHideFlags: 0

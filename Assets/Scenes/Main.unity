@@ -201,6 +201,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 337115565089481906, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 1460791428}
+    - target: {fileID: 337115565089481906, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
       propertyPath: mouseSentivity
       value: 800
       objectReference: {fileID: 0}
@@ -436,6 +440,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
+--- !u!4 &1460791428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7403621391407458581, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
+  m_PrefabInstance: {fileID: 504678556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1647972713
 PrefabInstance:
   m_ObjectHideFlags: 0
