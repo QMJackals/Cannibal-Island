@@ -5,21 +5,47 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 6;
+    public float damageDelay = 0.8f;
+    public float damageDuration = 0.4f;
+
     int currentHealth;
+    int currentDamageAmount;
+    bool beingDamaged = false;
+    bool canBeDamaged = true;
 
     private void Awake()
     {
         currentHealth = maxHealth;
+        currentDamageAmount = 0;
     }
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
+        if (!canBeDamaged || beingDamaged) return;
+
+        canBeDamaged = false;
+        beingDamaged = true;
+        currentDamageAmount = amount;
+
+        Invoke(nameof(ResetTakeDamage), damageDelay);
+        Invoke(nameof(DealDamage), damageDuration);
+        Debug.Log("Player is taking Damage :(");
+    }
+
+    private void DealDamage()
+    {
+        currentHealth -= currentDamageAmount;
 
         if (currentHealth <= 0)
         {
             Death();
         }
+    }
+
+    private void ResetTakeDamage() {
+        beingDamaged = false;
+        canBeDamaged = true;
+        currentDamageAmount = 0;
     }
 
     private void Death() {
