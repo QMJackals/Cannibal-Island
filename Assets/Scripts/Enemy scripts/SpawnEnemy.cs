@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
@@ -7,6 +8,7 @@ public class SpawnEnemy : MonoBehaviour
     public Transform player;
     public GameObject EnemyPrefab;
     public int enemyCount = 5;
+    public TextMeshProUGUI winText;
 
     private int randomRange = 50;
 
@@ -18,6 +20,7 @@ public class SpawnEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        winText.gameObject.SetActive(false);
         Spawn();
     }
 
@@ -38,6 +41,15 @@ public class SpawnEnemy : MonoBehaviour
             randomZ = Mathf.Clamp(randomZ, minZ, maxZ);
 
             Instantiate(EnemyPrefab, new Vector3(randomX, playerY, randomZ), Quaternion.identity);
+        }
+    }
+
+    public void UpdateEnemyCountBy(int amount)
+    {
+        enemyCount += amount;
+        if (enemyCount <= 0)
+        {
+            winText.gameObject.SetActive(true);
         }
     }
 }

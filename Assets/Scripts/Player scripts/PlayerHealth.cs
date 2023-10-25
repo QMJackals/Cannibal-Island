@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 6;
     public float damageDelay = 0.8f;
     public float damageDuration = 0.4f;
+
+    public TextMeshProUGUI looseText;
 
     int currentHealth;
     int currentDamageAmount;
@@ -17,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         currentDamageAmount = 0;
+        looseText.gameObject.SetActive(false);
     }
 
     public void TakeDamage(int amount)
@@ -50,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Death() {
         Debug.Log("Player is now a ghost");
+        looseText.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 }

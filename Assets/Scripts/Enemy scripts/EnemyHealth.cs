@@ -8,9 +8,12 @@ public class EnemyHealth : MonoBehaviour
     int currentHealth;
     public int maxHealth = 2;
 
+    GameObject enemyController;
+
     private void Awake()
     {
         currentHealth = maxHealth;
+        enemyController = GameObject.FindGameObjectWithTag("EnemyController");
     }
 
     public void TakeDamage(int amount) {
@@ -26,5 +29,6 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("enemy is dead");
         gameObject.SetActive(false);
+        enemyController.GetComponent<SpawnEnemy>().UpdateEnemyCountBy(-1);
     }
 }
