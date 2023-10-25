@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 191386287}
     - target: {fileID: 4386920518677743, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
       propertyPath: enemyCount
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 222801582948750666, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
       propertyPath: m_Name
