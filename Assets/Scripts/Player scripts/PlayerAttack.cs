@@ -8,10 +8,10 @@ public class PlayerAttack : MonoBehaviour
     // Code was inspired by https://www.youtube.com/watch?v=yZhKUViKS_w
     public Camera cam;
 
-    public float attackDistance = 5f;
-    public float attackDelay = 0.4f;
-    public float attackSpeed = 1f;
-    public int attackDamage = 1;
+    public float attackDistance = 4f;
+    public float attackDelay = 0.3f;
+    public float attackSpeed = 0.4f;
+    public int attackDamage = 2;
     public LayerMask enemyLayer;
 
     bool attacking = false;
@@ -23,7 +23,6 @@ public class PlayerAttack : MonoBehaviour
             Attack();
         }
     }
-
 
     public void Attack() {
         if (!readyToAttack || attacking) return;

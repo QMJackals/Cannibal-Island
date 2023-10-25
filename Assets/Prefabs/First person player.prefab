@@ -128,9 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 7244617700948470140}
-  attackDistance: 5
-  attackDelay: 0.4
-  attackSpeed: 1
+  attackDistance: 4
+  attackDelay: 0.3
+  attackSpeed: 0.4
   attackDamage: 2
   enemyLayer:
     serializedVersion: 2
