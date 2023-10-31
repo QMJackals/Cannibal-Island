@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     public int health;
     public int numOfHeats; //heart container. If we need 3 hearts, so we need 3 heart containers
@@ -13,7 +13,11 @@ public class NewBehaviourScript : MonoBehaviour
     public Sprite halfHeart;
     public Sprite emptyHeart;
 
-
+    public int UpdateHealth(int delta)
+    {
+        health += delta;
+        return health;
+    }
 
     //https://www.youtube.com/watch?v=3uyolYVsiWc&t=178s
     private void Update()

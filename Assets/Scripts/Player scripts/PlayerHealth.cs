@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 6;
     public float damageDelay = 0.8f;
     public float damageDuration = 0.4f;
 
@@ -16,9 +15,14 @@ public class PlayerHealth : MonoBehaviour
     bool beingDamaged = false;
     bool canBeDamaged = true;
 
+    HealthBar healthBar;
+
     private void Awake()
     {
-        currentHealth = maxHealth;
+        GameObject healthBarUI = GameObject.FindGameObjectWithTag("HealthBar");
+        healthBar = healthBarUI.GetComponent<HealthBar>();
+
+        currentHealth = healthBar.health;
         currentDamageAmount = 0;
         looseText.gameObject.SetActive(false);
     }
@@ -33,12 +37,12 @@ public class PlayerHealth : MonoBehaviour
 
         Invoke(nameof(ResetTakeDamage), damageDelay);
         Invoke(nameof(DealDamage), damageDuration);
-        Debug.Log("Player is taking Damage :(");
     }
 
     private void DealDamage()
     {
-        currentHealth -= currentDamageAmount;
+        // currentHealth - currentDamageAmount
+        currentHealth = healthBar.UpdateHealth(-currentDamageAmount);
 
         if (currentHealth <= 0)
         {
@@ -53,7 +57,6 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void Death() {
-        Debug.Log("Player is now a ghost");
         looseText.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
