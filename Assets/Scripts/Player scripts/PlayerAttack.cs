@@ -7,6 +7,9 @@ public class PlayerAttack : MonoBehaviour
 {
     // Code was inspired by https://www.youtube.com/watch?v=yZhKUViKS_w
     public Camera cam;
+    public GameObject leftArm;
+    public GameObject rightArm;
+    public GameObject armWithKnife;
 
     public float attackDistance = 4f;
     public float attackDelay = 0.3f;
@@ -17,14 +20,25 @@ public class PlayerAttack : MonoBehaviour
     bool attacking = false;
     bool readyToAttack = true;
 
-    public void OnFire(InputValue btn) {
+    Animator leftArmAnim;
+    Animator rightArmAnim;
+    Animator armWithKnifeAnim;
+
+    private void Start()
+    {
+        leftArmAnim = leftArm.GetComponent<Animator>();
+        rightArmAnim = rightArm.GetComponent<Animator>();
+        armWithKnifeAnim = armWithKnife.GetComponent<Animator>();
+    }
+
+    public void OnMelee(InputValue btn) {
         if (btn.isPressed)
         {
-            Attack();
+            MeleeAttack();
         }
     }
 
-    public void Attack() {
+    public void MeleeAttack() {
         if (!readyToAttack || attacking) return;
 
         readyToAttack = false;
@@ -32,7 +46,9 @@ public class PlayerAttack : MonoBehaviour
 
         Invoke(nameof(ResetAttack), attackSpeed);
         Invoke(nameof(AttackRaycast), attackDelay);
-        Debug.Log("Player Attack!");
+
+        // Run animation
+        MeleeAnimation();
     }
 
     private void ResetAttack()
@@ -60,4 +76,9 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log("Target hit!");
     }
 
+    private void MeleeAnimation()
+    {
+        leftArmAnim.SetTrigger("StabTrigger");
+        armWithKnifeAnim.SetTrigger("StabTrigger");
+    }
 }
