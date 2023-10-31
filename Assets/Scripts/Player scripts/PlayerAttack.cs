@@ -11,10 +11,16 @@ public class PlayerAttack : MonoBehaviour
     public GameObject rightArm;
     public GameObject armWithKnife;
 
-    public float attackDistance = 4f;
-    public float attackDelay = 0.3f;
-    public float attackSpeed = 0.4f;
-    public int attackDamage = 2;
+    public float meleeAttackDistance = 4f;
+    public float meleeAttackDelay = 0.3f;
+    public float meleeAttackSpeed = 0.4f;
+    public int meleeAttackDamage = 2;
+
+    public float rangeAttackDistance = 50f;
+    public float rangeAttackDelay = 2f;
+    public float rangeAttackSpeed = 2f;
+    public int rangeAttackDamage = 2;
+
     public LayerMask enemyLayer;
 
     bool attacking = false;
@@ -31,11 +37,31 @@ public class PlayerAttack : MonoBehaviour
         armWithKnifeAnim = armWithKnife.GetComponent<Animator>();
     }
 
+    public void OnFire(InputValue btn) {
+        if (btn.isPressed)
+        {
+            RangeAttack();
+        }
+    }
+
     public void OnMelee(InputValue btn) {
         if (btn.isPressed)
         {
             MeleeAttack();
         }
+    }
+
+    public void RangeAttack()
+    {
+        if (!readyToAttack || attacking) return;
+
+        readyToAttack = false;
+        attacking = true;
+
+        Invoke(nameof(ResetAttack), rangeAttackSpeed);
+
+        // Run Animation
+        RangeAnimation();
     }
 
     public void MeleeAttack() {
@@ -44,8 +70,8 @@ public class PlayerAttack : MonoBehaviour
         readyToAttack = false;
         attacking = true;
 
-        Invoke(nameof(ResetAttack), attackSpeed);
-        Invoke(nameof(AttackRaycast), attackDelay);
+        Invoke(nameof(ResetAttack), meleeAttackSpeed);
+        Invoke(nameof(AttackRaycast), meleeAttackDelay);
 
         // Run animation
         MeleeAnimation();
@@ -59,14 +85,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void AttackRaycast()
     {
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, attackDistance, enemyLayer))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, meleeAttackDistance, enemyLayer))
         {
             HitTarget();
 
             // Destroy enemy
             if (hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth T))
             {
-                T.TakeDamage(attackDamage);
+                T.TakeDamage(meleeAttackDamage);
             }
         }
     }
@@ -80,5 +106,11 @@ public class PlayerAttack : MonoBehaviour
     {
         leftArmAnim.SetTrigger("StabTrigger");
         armWithKnifeAnim.SetTrigger("StabTrigger");
+    }
+
+    private void RangeAnimation()
+    {
+        leftArmAnim.SetTrigger("ShootTrigger");
+        rightArmAnim.SetTrigger("ShootTrigger");
     }
 }

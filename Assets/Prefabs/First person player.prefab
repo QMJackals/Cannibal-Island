@@ -410,7 +410,6 @@ GameObject:
   - component: {fileID: 1989706427389820923}
   - component: {fileID: 5786845889129457977}
   - component: {fileID: 8662646104602279451}
-  - component: {fileID: 6843862415648757651}
   m_Layer: 0
   m_Name: LeftArm
   m_TagString: Untagged
@@ -527,18 +526,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6843862415648757651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536328845186112361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0412d2f8b9f534589ec34ce60f3f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3905408862457625353
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +749,6 @@ GameObject:
   - component: {fileID: 8109960392467518084}
   - component: {fileID: 1725513027018342286}
   - component: {fileID: 7069617050973274376}
-  - component: {fileID: 4804627061230076438}
   m_Layer: 0
   m_Name: RightArm
   m_TagString: Untagged
@@ -879,18 +865,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4804627061230076438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172894020081688432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0412d2f8b9f534589ec34ce60f3f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5370478165886284509
 GameObject:
   m_ObjectHideFlags: 0
