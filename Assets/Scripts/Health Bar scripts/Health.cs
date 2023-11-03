@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +15,8 @@ public class HealthBar : MonoBehaviour
     public Sprite halfHeart;
     public Sprite emptyHeart;
 
+    bool toRegen;
+
     public int UpdateHealth(int delta)
     {
         health += delta;
@@ -20,7 +24,7 @@ public class HealthBar : MonoBehaviour
     }
 
     //https://www.youtube.com/watch?v=3uyolYVsiWc&t=178s
-    private void Update()
+    void Update()
     {
 
         //condition to make player does not have health more than the number of heart
@@ -71,6 +75,26 @@ public class HealthBar : MonoBehaviour
 
 
         }
+
+
+        //Regenerate Health
+        if (health < numOfHeats && !toRegen)
+        {
+            toRegen = true;
+            StartCoroutine(RegenerateHealth());
+        }
+
+
+
+    }
+
+
+    //regenerate Health
+    IEnumerator RegenerateHealth() 
+    {
+        yield return new WaitForSeconds(10f);
+        health += 1;
+        toRegen = false;
     }
 
 }
