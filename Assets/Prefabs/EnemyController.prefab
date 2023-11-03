@@ -46,4 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7403621391407458581, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
   EnemyPrefab: {fileID: 7110463494314054048, guid: e88f534af9dee4f14ba74a48ca615e35, type: 3}
-  enemyCount: 5
+  maxEnemyCount: 20
+  numOfWaves: 2
+  winText: {fileID: 0}
+  gameTimer: {fileID: 0}

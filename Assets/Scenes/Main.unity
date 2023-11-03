@@ -390,11 +390,23 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4386920518677743, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1460791428}
+    - target: {fileID: 4386920518677743, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
       propertyPath: winText
       value: 
       objectReference: {fileID: 191386287}
     - target: {fileID: 4386920518677743, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 1362112223}
+    - target: {fileID: 4386920518677743, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
       propertyPath: enemyCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386920518677743, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
+      propertyPath: maxEnemyCount
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 222801582948750666, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
@@ -446,6 +458,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed11ce2c2d5a94001998bfcdea318a41, type: 3}
+--- !u!114 &1362112223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3505413653193885346, guid: b0f4ea314f4932e4198a1054b0840496, type: 3}
+  m_PrefabInstance: {fileID: 1647972713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfe2d0b598fc534fb8185e2506781a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1460791428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7403621391407458581, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
