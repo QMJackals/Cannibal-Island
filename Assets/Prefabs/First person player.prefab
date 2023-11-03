@@ -170,8 +170,7 @@ MonoBehaviour:
   meleeAttackDelay: 0.3
   meleeAttackSpeed: 0.4
   meleeAttackDamage: 2
-  rangeAttackDistance: 100
-  rangeAttackDelay: 2
+  rangeAttackDistance: 150
   rangeAttackSpeed: 2
   rangeAttackDamage: 2
   enemyLayer:
@@ -191,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageDelay: 0.8
   damageDuration: 0.4
-  looseText: {fileID: 0}
+  loseText: {fileID: 0}
 --- !u!1 &943535864661246584
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1976b04e147a47c408bfdb3a2202d097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSentivity: 100
+  mouseSentivity: 45
   playerBody: {fileID: 7403621391407458581}
 --- !u!1 &6718637034744306941
 GameObject:

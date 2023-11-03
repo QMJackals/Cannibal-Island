@@ -200,14 +200,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 337115565089481906, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
-      propertyPath: playerBody
-      value: 
-      objectReference: {fileID: 1460791428}
-    - target: {fileID: 337115565089481906, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
-      propertyPath: mouseSentivity
-      value: 800
-      objectReference: {fileID: 0}
     - target: {fileID: 442175656122218051, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
       propertyPath: m_Name
       value: First person player
@@ -252,10 +244,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8509364787250388064, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
-      propertyPath: rangeAttackSpeed
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 8723751134593585671, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
+      propertyPath: loseText
+      value: 
+      objectReference: {fileID: 2032208393}
     - target: {fileID: 8723751134593585671, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
       propertyPath: looseText
       value: 

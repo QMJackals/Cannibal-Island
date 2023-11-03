@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public float damageDelay = 0.8f;
     public float damageDuration = 0.4f;
 
-    public TextMeshProUGUI looseText;
+    public TextMeshProUGUI loseText;
 
     int currentHealth;
     int currentDamageAmount;
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth = healthBar.health;
         currentDamageAmount = 0;
-        looseText.gameObject.SetActive(false);
+        loseText.gameObject.SetActive(false);
     }
 
     public void TakeDamage(int amount)
@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void Death() {
-        looseText.gameObject.SetActive(true);
+        loseText.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 }
