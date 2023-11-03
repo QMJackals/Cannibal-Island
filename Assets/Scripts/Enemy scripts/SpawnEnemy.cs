@@ -53,9 +53,15 @@ public class SpawnEnemy : MonoBehaviour
             randomX = Mathf.Clamp(randomX, minX, maxX);
             randomZ = Mathf.Clamp(randomZ, minZ, maxZ);
 
-            Instantiate(EnemyPrefab, new Vector3(randomX, playerY, randomZ), Quaternion.identity);
+            // Spawn enemy within navmesh area based on solutions from https://forum.unity.com/threads/failed-to-create-agent-because-it-is-not-close-enough-to-the-navmesh.125593/
+            Vector3 enemySpawnLocation = new Vector3(randomX, playerY - 1, randomZ);
+            NavMeshHit closestHit;
+            if (NavMesh.SamplePosition(enemySpawnLocation, out closestHit, randomRange, NavMesh.AllAreas))
+            {
+                Instantiate(EnemyPrefab, closestHit.position, Quaternion.identity);
+                enemyCount++;
+            }
         }
-        enemyCount += maxEnemyCount;
         waves++;
     }
 
