@@ -11,13 +11,15 @@ public class PlayerAttack : MonoBehaviour
     public GameObject rightArm;
     public GameObject armWithKnife;
 
+    public Transform arrowSpawnPoint;
+    public Arrow arrowPrefab;
+
     public float meleeAttackDistance = 4f;
     public float meleeAttackDelay = 0.3f;
     public float meleeAttackSpeed = 0.4f;
     public int meleeAttackDamage = 2;
 
     public float rangeAttackDistance = 50f;
-    public float rangeAttackDelay = 2f;
     public float rangeAttackSpeed = 2f;
     public int rangeAttackDamage = 2;
 
@@ -29,6 +31,8 @@ public class PlayerAttack : MonoBehaviour
     Animator leftArmAnim;
     Animator rightArmAnim;
     Animator armWithKnifeAnim;
+
+    Arrow currentArrow;
 
     private void Start()
     {
@@ -58,10 +62,16 @@ public class PlayerAttack : MonoBehaviour
         readyToAttack = false;
         attacking = true;
 
-        Invoke(nameof(ResetAttack), rangeAttackSpeed);
-
         // Run Animation
         RangeAnimation();
+
+        Invoke(nameof(ResetAttack), rangeAttackSpeed);
+    }
+
+    public void RangeAttackFire()
+    {
+        Vector3 force = cam.transform.forward * rangeAttackDistance;
+        currentArrow.Fly(force);
     }
 
     public void MeleeAttack() {
@@ -71,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
         attacking = true;
 
         Invoke(nameof(ResetAttack), meleeAttackSpeed);
-        Invoke(nameof(AttackRaycast), meleeAttackDelay);
+        Invoke(nameof(MeleeAttackRaycast), meleeAttackDelay);
 
         // Run animation
         MeleeAnimation();
@@ -83,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
         attacking = false;
     }
 
-    private void AttackRaycast()
+    private void MeleeAttackRaycast()
     {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, meleeAttackDistance, enemyLayer))
         {
@@ -108,8 +118,19 @@ public class PlayerAttack : MonoBehaviour
         armWithKnifeAnim.SetTrigger("StabTrigger");
     }
 
+    // Called at the end of the arrow animation
+    public void SpawnArrow() {
+        currentArrow = Instantiate(arrowPrefab, arrowSpawnPoint);
+        currentArrow.transform.localPosition = Vector3.zero;
+        // Set the damage of the arrow
+        currentArrow.SetDamage(rangeAttackDamage);
+        // Fire the arrow
+        RangeAttackFire();
+    }
+
     private void RangeAnimation()
     {
+        rightArmAnim.Rebind();
         leftArmAnim.SetTrigger("ShootTrigger");
         rightArmAnim.SetTrigger("ShootTrigger");
     }

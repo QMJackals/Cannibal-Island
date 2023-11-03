@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - EnemyController
   - HealthBar
+  - RightArm
+  - Arrows
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
+  - Arrows
   - 
   - 
   - 
