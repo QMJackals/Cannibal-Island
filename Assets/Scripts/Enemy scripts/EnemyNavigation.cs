@@ -14,14 +14,10 @@ public class EnemyNavigation : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
 
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 

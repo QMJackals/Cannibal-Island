@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnEnemy : MonoBehaviour
 {
@@ -45,8 +46,6 @@ public class SpawnEnemy : MonoBehaviour
             float playerX = player.transform.position.x;
             float playerY = player.transform.position.y;
             float playerZ = player.transform.position.z;
-
-            Debug.Log(player.transform.position);
 
             float randomX = Random.Range(-randomRange + playerX, randomRange + 1 + playerX);
             float randomZ = Random.Range(-randomRange + playerZ, randomRange + 1 + playerZ);
