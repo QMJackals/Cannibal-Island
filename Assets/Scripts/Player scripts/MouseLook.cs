@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
 
-    public float mouseSentivity = 100f;
+    public float mouseSentivity = 500f;
 
     //a reference from the main camera to our entire first person player object so that we can rotate around
     public Transform playerBody;
