@@ -10,14 +10,18 @@ public class DaysSurvivedCounter : MonoBehaviour
     void Start()
     {
         daysSurvivedCounter_Text = GetComponent<TextMeshProUGUI>(); // Accesses the text in the UI
+        daysSurvivedCounter_Text.enabled = true;
     }
     void Update()
     {
-        int numDaysSurvived = igt.count; // Gets the number of days survived
-        daysSurvivedCounter_Text.text = "Days Survived: " + numDaysSurvived; // UI text displays the number of days survived
-        if (numDaysSurvived == 5)
+        if (igt.gameFinished == false) // The game is running
         {
-            // Game is done
+            int numDaysSurvived = igt.count; // Gets the number of days survived
+            daysSurvivedCounter_Text.text = "Days Survived: " + numDaysSurvived; // UI text displays the number of days survived
+        }
+        else // The game has finished
+        {
+            daysSurvivedCounter_Text.enabled = false;
         }
     }
 }

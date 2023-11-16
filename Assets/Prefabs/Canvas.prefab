@@ -615,6 +615,7 @@ MonoBehaviour:
   inGameTimer_Text: {fileID: 2393728547707948707}
   isDone: 0
   count: 0
+  gameFinished: 0
   timeCycle: 0
 --- !u!1 &5713161656006299928
 GameObject:
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elapsedTime: 0
   elapsedTimer_Text: {fileID: 8042467999095976010}
+  igt: {fileID: 3505413653193885346}
 --- !u!1001 &683744871113226404
 PrefabInstance:
   m_ObjectHideFlags: 0

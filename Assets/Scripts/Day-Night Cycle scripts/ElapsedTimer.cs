@@ -8,13 +8,22 @@ public class ElapsedTimer : MonoBehaviour
 {
     public float elapsedTime = 0f; // Initialise timer to 0
     [SerializeField] private TMP_Text elapsedTimer_Text;
+    [SerializeField] private InGameTimer igt; // Gets the in game timer from InGameTimer.cs
     void Start()
     {
         elapsedTimer_Text = GetComponent<TextMeshProUGUI>(); // Accesses the text in the UI
+        elapsedTimer_Text.enabled = true;
     }
     void Update()
     {
-        elapsedTime += Time.deltaTime; // Every frame, the elapsed time is calculated
-        elapsedTimer_Text.text = "Elapsed Time: " + Mathf.Round(elapsedTime); // Changes the UI text to display the elapsed time (rounded up to nearest second)
+        if (igt.gameFinished == false) // The game is running
+        {
+            elapsedTime += Time.deltaTime; // Every frame, the elapsed time is calculated
+            elapsedTimer_Text.text = "Elapsed Time: " + Mathf.Round(elapsedTime); // Changes the UI text to display the elapsed time (rounded up to nearest second)
+        }
+        else // The game has finished
+        {
+            elapsedTimer_Text.enabled = false;
+        }        
     }
 }
