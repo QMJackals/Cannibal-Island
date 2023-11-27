@@ -21,10 +21,13 @@ public class InGameTimer : MonoBehaviour
     public int count; // Needed to count how many days have passed
     public bool gameFinished; // Needed to check if game is over or still running
     public TimeCycle timeCycle;
+    public GameObject sky;
+    Animator cloudAnim; // Needed to activate the on / off cloud animations
 
     void Start()
     {
         inGameTimer_Text = GetComponent<TextMeshProUGUI>(); // Accesses the text in the UI
+        cloudAnim = sky.GetComponent<Animator>(); // Accesses the cloud animator
         inGameTimer_Text.enabled = true;
         count = 0; // Resets the counter
         isDone = false;
@@ -45,6 +48,7 @@ public class InGameTimer : MonoBehaviour
                 count++;
                 isDone = true;
             }
+            cloudAnim.SetTrigger("DawnTrigger"); // Trigger the cloud "on" animation
         }
 
         if (eTime == 0 || eTime == 550 || eTime == 1270 || eTime == 1990 || eTime == 2710) // Every few minutes, when game state is "day"
@@ -59,6 +63,7 @@ public class InGameTimer : MonoBehaviour
             timeCycle = TimeCycle.DUSK;
             inGameTimer_Text.text = "In Game Time: Dusk";
             isDone = false;
+            cloudAnim.SetTrigger("DuskTrigger"); // Trigger the cloud "off" animation
         }
 
         if (eTime == 200 || eTime == 920 || eTime == 1640 || eTime == 2360 || eTime == 3080) // Every few minutes, when game state is "night"
