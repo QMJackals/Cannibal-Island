@@ -37,7 +37,8 @@ public class InGameTimer : MonoBehaviour
 
     void Update()
     {
-        float eTime = Mathf.Round(et.elapsedTime); // Rounds the elapsed time to the nearest second
+        float eTime = (Mathf.Round(et.elapsedTime))*2; // Rounds the elapsed time to the nearest second
+        // Game is also sped up by x2 (recommended from playtesting feedback)
 
         if (eTime == 520 || eTime == 1240 || eTime == 1960 || eTime == 2680 || eTime == 3400) // Every few minutes, when game state is "dawn"
         {
