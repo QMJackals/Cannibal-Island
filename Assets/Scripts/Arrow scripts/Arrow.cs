@@ -32,13 +32,14 @@ public class Arrow : MonoBehaviour
         didHit = true;
         isFlying = false;
 
-        if (other.CompareTag(enemyTag)) {
-            other.GetComponent<EnemyHealth>().TakeDamage(damage);
-        }
-
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
         transform.SetParent(other.transform);
+
+        if (other.CompareTag(enemyTag))
+        {
+            other.GetComponent<EnemyHealth>().TakeDamage(damage);
+        }
     }
 }

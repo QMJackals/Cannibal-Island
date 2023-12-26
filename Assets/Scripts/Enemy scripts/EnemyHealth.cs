@@ -17,8 +17,8 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void TakeDamage(int amount) {
-        Debug.Log("enemy taken damage");
         currentHealth -= amount;
+        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.cyan);
 
         if (currentHealth <= 0) {
             Death();
@@ -27,7 +27,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
-        Debug.Log("enemy is dead");
         gameObject.SetActive(false);
         enemyController.GetComponent<SpawnEnemy>().UpdateEnemyCountBy(-1);
     }

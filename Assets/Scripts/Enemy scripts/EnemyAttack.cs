@@ -10,7 +10,6 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Player hit by enemy!");
             if (other.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth P)) {
                 P.TakeDamage(attackDamage);
             }

@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     public float rangeAttackDistance = 50f;
     public float rangeAttackSpeed = 2f;
-    public int rangeAttackDamage = 2;
+    public int rangeAttackDamage = 1;
 
     public LayerMask enemyLayer;
 
