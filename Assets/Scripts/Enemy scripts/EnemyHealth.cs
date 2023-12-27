@@ -9,11 +9,13 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 2;
 
     GameObject enemyController;
+    LootManager lootManager;
 
     private void Awake()
     {
         currentHealth = maxHealth;
         enemyController = GameObject.FindGameObjectWithTag("EnemyController");
+        lootManager = enemyController.GetComponent<LootManager>();
     }
 
     public void TakeDamage(int amount) {
@@ -29,5 +31,9 @@ public class EnemyHealth : MonoBehaviour
     {
         gameObject.SetActive(false);
         enemyController.GetComponent<SpawnEnemy>().UpdateEnemyCountBy(-1);
+        if (lootManager.IsLootDropped())
+        {
+            lootManager.DropLoot(transform.position);
+        }
     }
 }

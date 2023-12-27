@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1240451893386507517}
   - component: {fileID: 8509364787250388064}
   - component: {fileID: 8723751134593585671}
+  - component: {fileID: 2584030232540370671}
   m_Layer: 0
   m_Name: First person player
   m_TagString: Player
@@ -191,6 +192,18 @@ MonoBehaviour:
   damageDelay: 0.8
   damageDuration: 0.4
   loseText: {fileID: 0}
+--- !u!114 &2584030232540370671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442175656122218051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccc4f692d3044d42988ba5f0c4dbf8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943535864661246584
 GameObject:
   m_ObjectHideFlags: 0

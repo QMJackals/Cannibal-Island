@@ -34,17 +34,26 @@ public class PlayerAttack : MonoBehaviour
 
     Arrow currentArrow;
 
+    Inventory inventory;
+
     private void Start()
     {
         leftArmAnim = leftArm.GetComponent<Animator>();
         rightArmAnim = rightArm.GetComponent<Animator>();
         armWithKnifeAnim = armWithKnife.GetComponent<Animator>();
+        inventory = gameObject.GetComponent<Inventory>();
     }
 
     public void OnFire(InputValue btn) {
         if (btn.isPressed)
         {
-            RangeAttack();
+            if (inventory.HasRangeAttackAmmo())
+            {
+                RangeAttack();
+            } else
+            {
+                Debug.Log("No range attack ammo!");
+            }
         }
     }
 
@@ -126,6 +135,8 @@ public class PlayerAttack : MonoBehaviour
         currentArrow.SetDamage(rangeAttackDamage);
         // Fire the arrow
         RangeAttackFire();
+        // Deplete range attack ammo from inventory
+        inventory.RemoveItem(InventoryItemType.ARROW, -1);
     }
 
     private void RangeAnimation()

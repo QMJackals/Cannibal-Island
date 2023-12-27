@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3363598710457083798}
   - component: {fileID: 4386920518677743}
+  - component: {fileID: 3160899830738875751}
   m_Layer: 0
   m_Name: EnemyController
   m_TagString: EnemyController
@@ -50,3 +51,16 @@ MonoBehaviour:
   numOfWaves: 2
   winText: {fileID: 0}
   gameTimer: {fileID: 0}
+--- !u!114 &3160899830738875751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222801582948750666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971c357920090495594255a182c830d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowLootDropPrefab: {fileID: 47651973958400638, guid: 9e9c9102768384f759c1795aa69c709a, type: 3}
