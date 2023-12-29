@@ -18,11 +18,12 @@ public class SpawnEnemy : MonoBehaviour
     private float maxX = 997;
     private float maxZ = 997;
 
-    // Enemy wave properties
-    int enemyCount = 0;
-    int waves = 0;
-    int maxEnemyCount = 20;
-    int numOfWaves = 2;
+    // Enemy spawning properties
+    int numOfNights = 5;
+    int currNight = 1;
+    int currEnemyCount = 0;
+    int wave = 1;
+    int enemiesPerWave = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -34,17 +35,32 @@ public class SpawnEnemy : MonoBehaviour
     private void Update()
     {
         // Only spawn enemy's at night 
-        if (gameTimer.timeCycle == TimeCycle.NIGHT && waves < numOfWaves && (waves == 0 || enemyCount <= 3))
+        if (gameTimer.timeCycle == TimeCycle.NIGHT)
         {
-            Spawn();
+            // check if current night less than the count of days
+            if (currNight <= gameTimer.count)
+            {
+                // Advance to next wave when there are 20% of enemies left for the wave
+                if (wave <= currNight && currEnemyCount <= enemiesPerWave/5)
+                {
+                    // Spawn enemies
+                    Spawn(wave * currNight * enemiesPerWave);
+                }
+                else if (wave > currNight)
+                {
+                    wave = 1;
+                    currNight++;
+                    enemiesPerWave = enemiesPerWave * 2;
+                }
+            }
         }
     }
 
     // Spawn enemies around the player's location
-    private void Spawn()
+    private void Spawn(int enemyCount)
     {
         // Code was inspired by this tutorial: https://subscription.packtpub.com/book/game-development/9781783553655/1/ch01lvl1sec13/creating-enemies
-        for (int i = 0; i < maxEnemyCount; i++)
+        for (int i = 0; i < enemyCount; i++)
         {
             // Get player position
             float playerX = player.transform.position.x;
@@ -65,17 +81,18 @@ public class SpawnEnemy : MonoBehaviour
             if (NavMesh.SamplePosition(enemySpawnLocation, out closestHit, randomRange, NavMesh.AllAreas))
             {
                 Instantiate(EnemyPrefab, closestHit.position, Quaternion.identity);
-                enemyCount++;
+                currEnemyCount++;
             }
         }
-        waves++;
+        Debug.Log(string.Format("Night {0}, Wave {1}: Spawned {2} Enemies", currNight, wave, enemyCount));
+        wave++;
     }
 
     public void UpdateEnemyCountBy(int amount)
     {
         // This function is used to decrement the enemy count when the player kills enemies
-        enemyCount += amount;
-        if (enemyCount <= 0 && waves >= numOfWaves)
+        currEnemyCount += amount;
+        if (currEnemyCount <= 0 && currNight > numOfNights)
         {
             winText.gameObject.SetActive(true);
         }

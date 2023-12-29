@@ -26,7 +26,7 @@ public class Arrow : MonoBehaviour
         transform.SetParent(null);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (didHit || !isFlying) return;
         didHit = true;

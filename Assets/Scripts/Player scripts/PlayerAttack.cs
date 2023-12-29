@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject leftArm;
     public GameObject rightArm;
     public GameObject armWithKnife;
+    public TextMeshProUGUI noRangeAmmoLabel;
 
     public Transform arrowSpawnPoint;
     public Arrow arrowPrefab;
@@ -52,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
                 RangeAttack();
             } else
             {
-                Debug.Log("No range attack ammo!");
+                StartCoroutine(ShowNoRangeAmmoLabel());
             }
         }
     }
@@ -144,5 +146,13 @@ public class PlayerAttack : MonoBehaviour
         rightArmAnim.Rebind();
         leftArmAnim.SetTrigger("ShootTrigger");
         rightArmAnim.SetTrigger("ShootTrigger");
+    }
+
+    // Show and hide no range ammo label
+    private IEnumerator ShowNoRangeAmmoLabel()
+    {
+        noRangeAmmoLabel.gameObject.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        noRangeAmmoLabel.gameObject.SetActive(false);
     }
 }
