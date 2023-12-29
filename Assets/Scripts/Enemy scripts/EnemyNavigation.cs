@@ -26,7 +26,7 @@ public class EnemyNavigation : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = Random.Range(4f, 6f);
+        agent.speed = Random.Range(7f, 11f);
     }
 
     // Update is called once per frame
