@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &222801582948750666
+--- !u!1 &3404330709966146052
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3363598710457083798}
-  - component: {fileID: 4386920518677743}
+  - component: {fileID: 3405976695026225357}
+  - component: {fileID: 6194808531725128755}
   m_Layer: 0
-  m_Name: EnemyController
-  m_TagString: EnemyController
+  m_Name: LootController
+  m_TagString: LootController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3363598710457083798
+--- !u!4 &3405976695026225357
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222801582948750666}
+  m_GameObject: {fileID: 3404330709966146052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 161.75128, y: 2.0063474, z: 32.112038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4386920518677743
+--- !u!114 &6194808531725128755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222801582948750666}
+  m_GameObject: {fileID: 3404330709966146052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97770b0c5302a49e5a29b589c9ab7e98, type: 3}
+  m_Script: {fileID: 11500000, guid: 971c357920090495594255a182c830d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7403621391407458581, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
-  EnemyPrefab: {fileID: 7110463494314054048, guid: e88f534af9dee4f14ba74a48ca615e35, type: 3}
-  maxEnemyCount: 20
-  numOfWaves: 2
-  winText: {fileID: 0}
-  gameTimer: {fileID: 0}
+  arrowLootDropPrefab: {fileID: 47651973958400638, guid: 9e9c9102768384f759c1795aa69c709a, type: 3}

@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         enemyController = GameObject.FindGameObjectWithTag("EnemyController");
-        lootManager = enemyController.GetComponent<LootManager>();
+        lootManager = GameObject.FindGameObjectWithTag("LootController").GetComponent<LootManager>();
     }
 
     public void TakeDamage(int amount) {

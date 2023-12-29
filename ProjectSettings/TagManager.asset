@@ -9,6 +9,7 @@ TagManager:
   - HealthBar
   - RightArm
   - Arrows
+  - LootController
   layers:
   - Default
   - TransparentFX
