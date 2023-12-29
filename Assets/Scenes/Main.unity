@@ -52617,6 +52617,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2518040017108095064, guid: 8367bd2de2e3b924bab1107e2d3ffcf5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5281206821233037108, guid: 8367bd2de2e3b924bab1107e2d3ffcf5, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -52669,7 +52673,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6880422630375106689, guid: 8367bd2de2e3b924bab1107e2d3ffcf5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3097673774990518567, guid: 8367bd2de2e3b924bab1107e2d3ffcf5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

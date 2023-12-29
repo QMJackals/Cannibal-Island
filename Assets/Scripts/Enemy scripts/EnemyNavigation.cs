@@ -14,6 +14,13 @@ public class EnemyNavigation : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
 
+    // Refresh Enemy path every .2 seconds
+    [Header("Stats")]
+    public float pathUpdateDelay = .2f;
+
+    // Keep track when path was last updated
+    private float pathLastUpdated;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +32,15 @@ public class EnemyNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.position);
+        UpdatePath();
+    }
+
+    void UpdatePath()
+    {
+        if (Time.time >= pathLastUpdated)
+        {
+            pathLastUpdated = Time.time + pathUpdateDelay;
+            agent.SetDestination(player.transform.position);
+        }
     }
 }
