@@ -7225,6 +7225,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6761473563701583805, guid: 6ee40838a1b7e114a9d695b948209ddb, type: 3}
   m_PrefabInstance: {fileID: 664979300}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &316279102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2892685321883185675, guid: b0f4ea314f4932e4198a1054b0840496, type: 3}
+  m_PrefabInstance: {fileID: 1647972713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &316391411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12741,6 +12752,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8509364787250388064, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
+      propertyPath: noRangeAmmoLabel
+      value: 
+      objectReference: {fileID: 316279102}
     - target: {fileID: 8509364787250388064, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
       propertyPath: rangeAttackDamage
       value: 1

@@ -38,7 +38,9 @@ public class SpawnEnemy : MonoBehaviour
         if (gameTimer.timeCycle == TimeCycle.NIGHT)
         {
             // check if current night less than the count of days
-            if (currNight <= gameTimer.count)
+            // gameTimer's count only increments after the night has ended
+            // we want to make sure currNight is not advancing faster than the count
+            if (currNight-1 <= gameTimer.count)
             {
                 // Advance to next wave when there are 20% of enemies left for the wave
                 if (wave <= currNight && currEnemyCount <= enemiesPerWave/5)

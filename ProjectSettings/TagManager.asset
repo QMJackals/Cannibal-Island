@@ -10,6 +10,7 @@ TagManager:
   - RightArm
   - Arrows
   - LootController
+  - Terrain
   layers:
   - Default
   - TransparentFX
