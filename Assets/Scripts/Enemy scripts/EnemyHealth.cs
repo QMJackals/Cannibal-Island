@@ -29,11 +29,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         enemyController.GetComponent<SpawnEnemy>().UpdateEnemyCountBy(-1);
         if (lootManager.IsLootDropped())
         {
             lootManager.DropLoot(transform.position);
         }
+        Destroy(gameObject);
     }
 }

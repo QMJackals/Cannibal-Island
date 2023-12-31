@@ -26,11 +26,22 @@ public class Arrow : MonoBehaviour
         transform.SetParent(null);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
+    {
+        // Prevent arrow from flying below terrain
+        if (transform.position.y <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (didHit || !isFlying) return;
         didHit = true;
         isFlying = false;
+
+        Debug.Log("triggered by: " + other.name);
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -40,6 +51,11 @@ public class Arrow : MonoBehaviour
         if (other.CompareTag(enemyTag))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(damage);
+        }
+        // Prevent bug of arrow sticking to the player
+        else if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
         }
     }
 }

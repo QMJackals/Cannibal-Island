@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6819424963587993009}
   m_Layer: 6
   m_Name: Water2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4916162411478287239}
   m_Layer: 6
   m_Name: Mainland
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1311149187771491706}
   m_Layer: 0
   m_Name: wall4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1462695434758683714}
   m_Layer: 0
   m_Name: Wall2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 4358080341996606233}
   m_Layer: 0
   m_Name: wall3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 5739064291591166003}
   m_Layer: 6
   m_Name: Water5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 6279582436421660273}
   m_Layer: 6
   m_Name: Water8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 5804988636648278529}
   m_Layer: 0
   m_Name: Wall1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 8375593877132959371}
   m_Layer: 6
   m_Name: Water1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 4666159589303592783}
   m_Layer: 6
   m_Name: Water4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 6242153486934608925}
   m_Layer: 6
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1216,7 +1216,7 @@ GameObject:
   - component: {fileID: 773222307480388871}
   m_Layer: 6
   m_Name: Water3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 683588465905672227}
   m_Layer: 6
   m_Name: Water7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 8082648430909798272}
   m_Layer: 6
   m_Name: Water6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
