@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
 
     public Transform arrowSpawnPoint;
     public Arrow arrowPrefab;
+    public ExplosiveArrow explosiveArrowPrefab;
 
     public float meleeAttackDistance = 4f;
     public float meleeAttackDelay = 0.3f;
@@ -33,8 +34,6 @@ public class PlayerAttack : MonoBehaviour
     Animator leftArmAnim;
     Animator rightArmAnim;
     Animator armWithKnifeAnim;
-
-    Arrow currentArrow;
 
     Inventory inventory;
 
@@ -79,10 +78,18 @@ public class PlayerAttack : MonoBehaviour
         Invoke(nameof(ResetAttack), rangeAttackSpeed);
     }
 
-    public void RangeAttackFire()
+    // Fire normal arrow
+    void RangeAttackFire(Arrow arrow)
     {
         Vector3 force = cam.transform.forward * rangeAttackDistance;
-        currentArrow.Fly(force);
+        arrow.Fly(force);
+    }
+
+    // Fire explosive arrow
+    void RangeAttackFire(ExplosiveArrow arrow)
+    {
+        Vector3 force = cam.transform.forward * rangeAttackDistance;
+        arrow.Fly(force);
     }
 
     public void MeleeAttack() {
@@ -108,8 +115,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, meleeAttackDistance, enemyLayer))
         {
-            HitTarget();
-
             // Destroy enemy
             if (hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth T))
             {
@@ -118,25 +123,26 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void HitTarget() {
-        // Used later
-        Debug.Log("Target hit!");
-    }
-
     private void MeleeAnimation()
     {
         leftArmAnim.SetTrigger("StabTrigger");
         armWithKnifeAnim.SetTrigger("StabTrigger");
     }
 
+    /* TODO:
+     * 1. test out explosive arrow by changing SpawnArrow to instantiate explosive arrow
+     * 2. create arrow type selector mechanism
+     * 3. change animation for the drawing arrow to based on currently selected arrow
+     */
+
     // Called at the end of the arrow animation
     public void SpawnArrow() {
-        currentArrow = Instantiate(arrowPrefab, arrowSpawnPoint);
+        ExplosiveArrow currentArrow = Instantiate(explosiveArrowPrefab, arrowSpawnPoint);
         currentArrow.transform.localPosition = Vector3.zero;
         // Set the damage of the arrow
-        currentArrow.SetDamage(rangeAttackDamage);
+        //currentArrow.SetDamage(rangeAttackDamage);
         // Fire the arrow
-        RangeAttackFire();
+        RangeAttackFire(currentArrow);
         // Deplete range attack ammo from inventory
         inventory.RemoveItem(InventoryItemType.ARROW, -1);
     }

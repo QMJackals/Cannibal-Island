@@ -5,8 +5,11 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     // Code is inspired by https://www.youtube.com/watch?v=Fu9X3OowEy0
+    // Properties for making the arrow fly
     public float torque;
     public Rigidbody rb;
+    bool isFlying;
+    bool didHit;
 
     // Properties for checking if the arrow has hit the ground yet
     public Transform groundCheck;
@@ -14,10 +17,9 @@ public class Arrow : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded = false;
 
-    int damage = 1;
+    // Properties for dealing damage to enemy
+    int damage = 8;
     string enemyTag = "Enemy";
-    bool isFlying;
-    bool didHit;
 
     public void SetDamage(int dmg)
     {

@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
         inventory = new int[3];
         for (int i = 0; i < 3; i++)
         {
-            inventory[i] = 0;
+            inventory[i] = 10;
         }
         LogInventory();
     }
