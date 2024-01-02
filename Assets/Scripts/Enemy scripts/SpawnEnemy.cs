@@ -50,11 +50,16 @@ public class SpawnEnemy : MonoBehaviour
                 }
                 else if (wave > currNight)
                 {
+                    // Reset the waves for the next night because the player got through the night
                     wave = 1;
                     currNight++;
                     enemiesPerWave = enemiesPerWave * 2;
                 }
             }
+        } else
+        {
+            // Reset the wave count in case the player did not get past all the waves of the night
+            wave = 1;
         }
     }
 

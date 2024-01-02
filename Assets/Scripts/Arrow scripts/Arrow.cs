@@ -5,13 +5,21 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     // Code is inspired by https://www.youtube.com/watch?v=Fu9X3OowEy0
+    // Properties for making the arrow fly
     public float torque;
     public Rigidbody rb;
-
-    int damage = 1;
-    string enemyTag = "Enemy";
     bool isFlying;
     bool didHit;
+
+    // Properties for checking if the arrow has hit the ground yet
+    public Transform groundCheck;
+    public float groundDistance = 1f;
+    public LayerMask groundMask;
+    bool isGrounded = false;
+
+    // Properties for dealing damage to enemy
+    int damage = 8;
+    string enemyTag = "Enemy";
 
     public void SetDamage(int dmg)
     {
@@ -26,26 +34,26 @@ public class Arrow : MonoBehaviour
         transform.SetParent(null);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Prevent arrow from flying below terrain
-        if (transform.position.y <= 0)
+        if (isFlying && !didHit && !isGrounded)
         {
-            Destroy(gameObject);
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            if (isGrounded)
+            {
+                arrowCollision();
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (didHit || !isFlying) return;
-        didHit = true;
-        isFlying = false;
+        arrowCollision();
 
         Debug.Log("triggered by: " + other.name);
-
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true;
         transform.SetParent(other.transform);
 
         if (other.CompareTag(enemyTag))
@@ -58,4 +66,16 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Stops arrow from flying after colliding with another game object
+    void arrowCollision()
+    {
+        didHit = true;
+        isFlying = false;
+
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+    }
+
 }

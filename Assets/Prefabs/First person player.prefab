@@ -165,6 +165,7 @@ MonoBehaviour:
   leftArm: {fileID: 3536328845186112361}
   rightArm: {fileID: 5172894020081688432}
   armWithKnife: {fileID: 6718637034744306941}
+  noRangeAmmoLabel: {fileID: 0}
   arrowSpawnPoint: {fileID: 4366832470233297637}
   arrowPrefab: {fileID: 7297963597823192590, guid: de559301a2df3433d963b989bd85791e, type: 3}
   meleeAttackDistance: 4
@@ -204,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc4f692d3044d42988ba5f0c4dbf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryText: {fileID: 0}
 --- !u!1 &943535864661246584
 GameObject:
   m_ObjectHideFlags: 0
