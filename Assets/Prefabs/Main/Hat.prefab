@@ -83,6 +83,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1672ee3c6840820458c65fd14af3e5a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5700289931992178349}
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 1672ee3c6840820458c65fd14af3e5a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6354411537053714650}
   m_SourcePrefab: {fileID: 100100000, guid: 1672ee3c6840820458c65fd14af3e5a9, type: 3}
 --- !u!1 &86184245946847057 stripped
 GameObject:
@@ -110,3 +113,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.671276, y: 0.33224678, z: 0.5476367}
   m_Center: {x: 0.11655358, y: 0.87394464, z: 1.0359886}
+--- !u!1 &8989180446323963784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 1672ee3c6840820458c65fd14af3e5a9, type: 3}
+  m_PrefabInstance: {fileID: 1005245876973122048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6354411537053714650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989180446323963784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.8980392, g: 1, b: 0, a: 1}
+  outlineWidth: 20
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
