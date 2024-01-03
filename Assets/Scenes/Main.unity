@@ -12708,6 +12708,10 @@ PrefabInstance:
       propertyPath: inventoryText
       value: 
       objectReference: {fileID: 1171566479}
+    - target: {fileID: 2584030232540370671, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
+      propertyPath: currentSelectionText
+      value: 
+      objectReference: {fileID: 1658206167}
     - target: {fileID: 7244617700948470140, guid: 9289219bf4a95e345ade3f39e3d062bb, type: 3}
       propertyPath: far clip plane
       value: 1500
@@ -39836,6 +39840,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb4b6db227464a643805022b3d973832, type: 3}
+--- !u!114 &1658206167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5192356831037449272, guid: b0f4ea314f4932e4198a1054b0840496, type: 3}
+  m_PrefabInstance: {fileID: 1647972713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1660432297
 PrefabInstance:
   m_ObjectHideFlags: 0

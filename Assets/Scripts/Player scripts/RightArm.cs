@@ -14,6 +14,7 @@ public class RightArm : MonoBehaviour
 
     public void CallSpawnArrow()
     {
-        playerAttack.SpawnArrow();
+        // Spawns either a normal arrow or an explosive arrow based on the inventory current selection
+        playerAttack.SpawnRangeAmmo();
     }
 }

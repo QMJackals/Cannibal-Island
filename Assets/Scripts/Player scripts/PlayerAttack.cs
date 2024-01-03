@@ -65,6 +65,15 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    public void OnToggleInventory(InputValue btn)
+    {
+        if (btn.isPressed)
+        {
+            // Toggle Inventory Current Selection
+            inventory.ToggleCurrentSelection();
+        }
+    }
+
     public void RangeAttack()
     {
         if (!readyToAttack || attacking) return;
@@ -129,29 +138,57 @@ public class PlayerAttack : MonoBehaviour
         armWithKnifeAnim.SetTrigger("StabTrigger");
     }
 
-    /* TODO:
-     * 1. test out explosive arrow by changing SpawnArrow to instantiate explosive arrow
-     * 2. create arrow type selector mechanism
-     * 3. change animation for the drawing arrow to based on currently selected arrow
-     */
+    // Called after Arrow animation finishes to spawn a normal arrow or explosive arrowhjm
+    public void SpawnRangeAmmo()
+    {
+        InventoryItemType currentSelection = inventory.GetCurrentSelection();
+        if (currentSelection == InventoryItemType.ARROW)
+        {
+            SpawnArrow();
+        } else if (currentSelection == InventoryItemType.EXPLOSIVE_ARROW)
+        {
+            SpawnExplosiveArrow();
+        }
+    }
 
-    // Called at the end of the arrow animation
-    public void SpawnArrow() {
-        ExplosiveArrow currentArrow = Instantiate(explosiveArrowPrefab, arrowSpawnPoint);
+    // Spawns a normal arrow at the arrow spawn point
+    private void SpawnArrow()
+    {
+        Arrow currentArrow = Instantiate(arrowPrefab, arrowSpawnPoint);
         currentArrow.transform.localPosition = Vector3.zero;
         // Set the damage of the arrow
-        //currentArrow.SetDamage(rangeAttackDamage);
+        currentArrow.SetDamage(rangeAttackDamage);
         // Fire the arrow
         RangeAttackFire(currentArrow);
         // Deplete range attack ammo from inventory
         inventory.RemoveItem(InventoryItemType.ARROW, -1);
     }
 
+    // Spawns an explosive arrow at the arrow spawn point
+    private void SpawnExplosiveArrow()
+    {
+        Debug.Log("spawning explosive arrow");
+        ExplosiveArrow currentArrow = Instantiate(explosiveArrowPrefab, arrowSpawnPoint);
+        currentArrow.transform.localPosition = Vector3.zero;
+        // Fire the arrow
+        RangeAttackFire(currentArrow);
+        // Deplete range attack ammo from inventory
+        inventory.RemoveItem(InventoryItemType.EXPLOSIVE_ARROW, -1);
+    }
+
     private void RangeAnimation()
     {
         rightArmAnim.Rebind();
+        // Trigger the right animation based on the current selection
         leftArmAnim.SetTrigger("ShootTrigger");
-        rightArmAnim.SetTrigger("ShootTrigger");
+        InventoryItemType currentSelection = inventory.GetCurrentSelection();
+        if (currentSelection == InventoryItemType.ARROW)
+        {
+            rightArmAnim.SetTrigger("ShootTriggerNormal");
+        } else if (currentSelection == InventoryItemType.EXPLOSIVE_ARROW)
+        {
+            rightArmAnim.SetTrigger("ShootTriggerExplosive");
+        }
     }
 
     // Show and hide no range ammo label

@@ -13,6 +13,9 @@ public enum InventoryItemType
 public class Inventory : MonoBehaviour
 {
     public TextMeshProUGUI inventoryText;
+    public TextMeshProUGUI currentSelectionText;
+
+    private InventoryItemType currentSelection;
     private int[] inventory;
 
     void Start()
@@ -21,9 +24,14 @@ public class Inventory : MonoBehaviour
         inventory = new int[3];
         for (int i = 0; i < 3; i++)
         {
-            inventory[i] = 10;
+            inventory[i] = 0;
         }
+        // Set current selection to arrow
+        currentSelection = InventoryItemType.ARROW;
+        // Log current inventory
         LogInventory();
+        // Log current selection
+        LogCurrentSelection();
     }
 
     void LogInventory() {
@@ -31,9 +39,35 @@ public class Inventory : MonoBehaviour
         inventoryText.text = string.Format(inventoryStr, inventory[0], inventory[1], inventory[2]);
     }
 
+    void LogCurrentSelection()
+    {
+        string currentSelectionStr = currentSelection == InventoryItemType.ARROW ? "Arrows" : "Explosive Arrows";
+        currentSelectionText.text = $"Selected: {currentSelectionStr}";
+    }
+
     public bool HasRangeAttackAmmo()
     {
         return inventory[0] > 0 || inventory[1] > 0;
+    }
+
+    // Get the current selection
+    public InventoryItemType GetCurrentSelection()
+    {
+        return currentSelection;
+    }
+
+    // Switch currently selected between Arrow and Explosive Arrow
+    public void ToggleCurrentSelection()
+    {
+        if (currentSelection == InventoryItemType.ARROW)
+        {
+            currentSelection = InventoryItemType.EXPLOSIVE_ARROW;
+        }
+        else if (currentSelection == InventoryItemType.EXPLOSIVE_ARROW)
+        {
+            currentSelection = InventoryItemType.ARROW;
+        }
+        LogCurrentSelection();
     }
 
     // Add items to inventory
