@@ -18,7 +18,7 @@ public class ElapsedTimer : MonoBehaviour
     {
         if (igt.gameFinished == false) // The game is running
         {
-            elapsedTime += Time.deltaTime * 4; // Every frame, the elapsed time is calculated
+            elapsedTime += Time.deltaTime; // Every frame, the elapsed time is calculated
             elapsedTimer_Text.text = "Elapsed Time: " + Mathf.Round(elapsedTime); // Changes the UI text to display the elapsed time (rounded up to nearest second)
         }
         else // The game has finished
