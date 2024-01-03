@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowLootDropPrefab: {fileID: 47651973958400638, guid: 9e9c9102768384f759c1795aa69c709a, type: 3}
+  explosiveArrowLootDrop: {fileID: 2728373156624717371, guid: aa75d874cf59f4f57a4971755c89a041, type: 3}

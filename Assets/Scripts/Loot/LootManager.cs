@@ -5,12 +5,14 @@ using UnityEngine.AI;
 public class LootManager: MonoBehaviour
 {
     public ArrowLootDrop arrowLootDropPrefab;
+    public ExplosiveArrowLootDrop explosiveArrowLootDrop;
 
     // Player GameObject reference
     GameObject player;
 
     // Fixed location
     Vector3 startingArrowSpawnPoint = new Vector3(155, 2, 38);
+    Vector3 startingExplosiveArrowSpawnPoint = new Vector3(158, 2, 42);
 
     // Properties for spawning loot randomly around the map
     int randomRange = 50;
@@ -25,8 +27,12 @@ public class LootManager: MonoBehaviour
         // Set Player GameObject
         player = GameObject.FindGameObjectWithTag("Player");
 
-        // Spawn first arrow
-        DropArrowLoot(startingArrowSpawnPoint, 10);
+        // Spawn 10 normal arrows
+        DropArrowLoot(startingArrowSpawnPoint, 10, false);
+
+        // Spawn 10 explosive arrows
+        DropArrowLoot(startingExplosiveArrowSpawnPoint, 10, true);
+
         // Spawn arrows around the map randomly
         StartCoroutine(SpawnArrowsRandomly());
     }
@@ -41,23 +47,23 @@ public class LootManager: MonoBehaviour
     // Determine which loot to drop
     public void DropLoot(Vector3 lootSpawnPoint)
     {
-        DropArrowLoot(lootSpawnPoint);
+        DropArrowLoot(lootSpawnPoint, IsExplosiveArrowDropped());
     }
 
     // Drop arrow loot with random number of arrows
-    private void DropArrowLoot(Vector3 lootSpawnPoint) {
+    private void DropArrowLoot(Vector3 lootSpawnPoint, bool isExplosive) {
         // Drop a random number of arrows between 1 - 10
         int nbOfArrows = Random.Range(1, 11);
-        InstantiateArrow(lootSpawnPoint, nbOfArrows);
+        InstantiateArrow(lootSpawnPoint, nbOfArrows, isExplosive);
     }
 
     // Drop arrow loot with a fixed number of arrows
-    private void DropArrowLoot(Vector3 lootSpawnPoint, int nbOfArrows)
+    private void DropArrowLoot(Vector3 lootSpawnPoint, int nbOfArrows, bool isExplosive)
     {
-        InstantiateArrow(lootSpawnPoint, nbOfArrows);
+        InstantiateArrow(lootSpawnPoint, nbOfArrows, isExplosive);
     }
 
-    private void InstantiateArrow(Vector3 arrowSpawnPoint, int nbOfArrows)
+    private void InstantiateArrow(Vector3 arrowSpawnPoint, int nbOfArrows, bool isExplosive)
     {
         // Spawn Arrow within navmesh area
         NavMeshHit closestHit;
@@ -65,10 +71,19 @@ public class LootManager: MonoBehaviour
         {
             // Make arrow float in the air based on closestHit
             arrowSpawnPoint = new Vector3(closestHit.position.x, closestHit.position.y + 2, closestHit.position.z);
-            // Create Arrow from Prefab
-            ArrowLootDrop arrowLoot = Instantiate(arrowLootDropPrefab, arrowSpawnPoint, Quaternion.Euler(new Vector3(90, 0, 0)));
-            // Set the number of arrows dropped
-            arrowLoot.SetNbOfArrows(nbOfArrows);
+            if (isExplosive)
+            {
+                // Create Explosive Arrow from Prefab
+                ExplosiveArrowLootDrop arrowLoot = Instantiate(explosiveArrowLootDrop, arrowSpawnPoint, Quaternion.Euler(new Vector3(90, 0, 0)));
+                // Set the number of arrows dropped
+                arrowLoot.SetNbOfArrows(nbOfArrows);
+            } else
+            {
+                // Create Arrow from Prefab
+                ArrowLootDrop arrowLoot = Instantiate(arrowLootDropPrefab, arrowSpawnPoint, Quaternion.Euler(new Vector3(90, 0, 0)));
+                // Set the number of arrows dropped
+                arrowLoot.SetNbOfArrows(nbOfArrows);
+            }
         }
     }
 
@@ -91,10 +106,13 @@ public class LootManager: MonoBehaviour
             randomZ = Mathf.Clamp(randomZ, minZ, maxZ);
 
             Vector3 arrowLootSpawnPoint = new Vector3(randomX, playerY, randomZ);
-            DropArrowLoot(arrowLootSpawnPoint);
-            Debug.Log("Spawned arrow loot");
+            DropArrowLoot(arrowLootSpawnPoint, IsExplosiveArrowDropped());
         }
     }
 
-    
+    // Only drop explosive arrows 10% of the time
+    private bool IsExplosiveArrowDropped()
+    {
+        return Random.Range(0, 10) < 1;
+    }
 }

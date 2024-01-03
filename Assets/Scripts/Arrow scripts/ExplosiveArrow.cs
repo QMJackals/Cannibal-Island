@@ -19,7 +19,7 @@ public class ExplosiveArrow : MonoBehaviour
     // Properties for dealing damage to enemy
     int damage = 2;
     string enemyTag = "Enemy";
-    int blastRadius = 7;
+    int blastRadius = 10;
 
     // Explosion Partical System
     public ParticleSystem explosionPrefab;

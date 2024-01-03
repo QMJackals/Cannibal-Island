@@ -45,9 +45,10 @@ public class Inventory : MonoBehaviour
         currentSelectionText.text = $"Selected: {currentSelectionStr}";
     }
 
+    // Returns if there is any currently selected range attack ammo in the inventory
     public bool HasRangeAttackAmmo()
     {
-        return inventory[0] > 0 || inventory[1] > 0;
+        return inventory[(int)currentSelection] > 0;
     }
 
     // Get the current selection
