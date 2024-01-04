@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    // Game Result Component
+    public GameResult gameResult;
+
     public float damageDelay = 0.8f;
     public float damageDuration = 0.4f;
-
-    public TextMeshProUGUI loseText;
 
     int currentHealth;
     int currentDamageAmount;
@@ -17,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
 
     HealthBar healthBar;
 
+    
+
     private void Awake()
     {
         GameObject healthBarUI = GameObject.FindGameObjectWithTag("HealthBar");
@@ -24,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth = healthBar.health;
         currentDamageAmount = 0;
-        loseText.gameObject.SetActive(false);
     }
 
     public void TakeDamage(int amount)
@@ -57,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void Death() {
-        loseText.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        // Player has died, show game over scene
+        gameResult.Setup(false);
     }
 }

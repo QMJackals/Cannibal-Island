@@ -14,13 +14,24 @@ public class GameResult : MonoBehaviour
         // Determine which label is active
         if (didSurvive)
         {
-            gameOverLabel.enabled = false;
-            winLabel.enabled = true;
-        } else
-        {
-            gameOverLabel.enabled = true;
-            winLabel.enabled = false;
+            gameOverLabel.gameObject.SetActive(false);
+            winLabel.gameObject.SetActive(true);
         }
+        else
+        {
+            gameOverLabel.gameObject.SetActive(true);
+            winLabel.gameObject.SetActive(false);
+        }
+
+        // Show game over screen
+        gameObject.SetActive(true);
+
+        // Enable cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Pause Game Time
+        Time.timeScale = 0;
     }
 
     public void ReturnToMainMenu()

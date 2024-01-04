@@ -11,6 +11,7 @@ TagManager:
   - Arrows
   - LootController
   - Terrain
+  - GameResult
   layers:
   - Default
   - TransparentFX

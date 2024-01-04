@@ -8,7 +8,6 @@ public class SpawnEnemy : MonoBehaviour
 {
     public Transform player;
     public GameObject EnemyPrefab;
-    public TextMeshProUGUI winText;
     public InGameTimer gameTimer;
 
     // Properties for spawning enemies randomly around the map
@@ -25,12 +24,8 @@ public class SpawnEnemy : MonoBehaviour
     int wave = 1;
     int enemiesPerWave = 5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Hide win text
-        winText.gameObject.SetActive(false);
-    }
+    // Game Result Component
+    public GameResult gameResult;
 
     private void Update()
     {
@@ -56,7 +51,8 @@ public class SpawnEnemy : MonoBehaviour
                     enemiesPerWave = enemiesPerWave * 2;
                 }
             }
-        } else
+        }
+        else
         {
             // Reset the wave count in case the player did not get past all the waves of the night
             wave = 1;
@@ -99,9 +95,11 @@ public class SpawnEnemy : MonoBehaviour
     {
         // This function is used to decrement the enemy count when the player kills enemies
         currEnemyCount += amount;
+        // Check if game is over
         if (currEnemyCount <= 0 && currNight > numOfNights)
         {
-            winText.gameObject.SetActive(true);
+            // Player won game!
+            gameResult.Setup(true);
         }
     }
 }
