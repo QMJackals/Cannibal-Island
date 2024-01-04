@@ -18459,7 +18459,7 @@ GameObject:
   - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: LightSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39958,6 +39958,10 @@ PrefabInstance:
       propertyPath: sky
       value: 
       objectReference: {fileID: 6219037067102129231}
+    - target: {fileID: 3505413653193885346, guid: b0f4ea314f4932e4198a1054b0840496, type: 3}
+      propertyPath: gameResult
+      value: 
+      objectReference: {fileID: 151151364}
     - target: {fileID: 3806853292369013156, guid: b0f4ea314f4932e4198a1054b0840496, type: 3}
       propertyPath: m_Name
       value: Canvas

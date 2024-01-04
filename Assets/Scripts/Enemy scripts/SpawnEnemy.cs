@@ -96,7 +96,7 @@ public class SpawnEnemy : MonoBehaviour
         // This function is used to decrement the enemy count when the player kills enemies
         currEnemyCount += amount;
         // Check if game is over
-        if (currEnemyCount <= 0 && currNight > numOfNights)
+        if (currEnemyCount <= 0 && currNight == numOfNights)
         {
             // Player won game!
             gameResult.Setup(true);

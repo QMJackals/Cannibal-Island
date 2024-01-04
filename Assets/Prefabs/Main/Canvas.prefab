@@ -618,6 +618,7 @@ MonoBehaviour:
   gameFinished: 0
   timeCycle: 0
   sky: {fileID: 5254666843799306259, guid: 3263b9d6b280ae94b8a0eeca7e98fd9a, type: 3}
+  gameResult: {fileID: 0}
 --- !u!1 &5713161656006299928
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +690,7 @@ MonoBehaviour:
 
     Explosive Arrows: 0
 
-    Secrets: 0'
+    Secrets: 0/10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

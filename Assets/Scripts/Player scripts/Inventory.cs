@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
     }
 
     void LogInventory() {
-        string inventoryStr = "Inventory:\nArrows: {0}\nExplosive Arrows: {1}\nSecrets: {2}";
+        string inventoryStr = "Inventory:\nArrows: {0}\nExplosive Arrows: {1}\nSecrets: {2}/10";
         inventoryText.text = string.Format(inventoryStr, inventory[0], inventory[1], inventory[2]);
     }
 

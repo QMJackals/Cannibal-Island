@@ -24,6 +24,9 @@ public class InGameTimer : MonoBehaviour
     public GameObject sky;
     Animator cloudAnim; // Needed to activate the on / off cloud animations
 
+    // Game Result Component
+    public GameResult gameResult;
+
     void Start()
     {
         inGameTimer_Text = GetComponent<TextMeshProUGUI>(); // Accesses the text in the UI
@@ -40,7 +43,7 @@ public class InGameTimer : MonoBehaviour
         float eTime = (Mathf.Round(et.elapsedTime))*2; // Rounds the elapsed time to the nearest second
         // Game is also sped up by x2 (recommended from playtesting feedback)
 
-        if (eTime == 520 || eTime == 1240 || eTime == 1960 || eTime == 2680 || eTime == 3400) // Every few minutes, when game state is "dawn"
+        if (eTime == 520 || eTime == 1240 || eTime == 1960 || eTime == 2680 || eTime == 3400) // Every few minutes, when game state is "dawn"        {
         {
             timeCycle = TimeCycle.DAWN;
             inGameTimer_Text.text = "In Game Time: Dawn";
@@ -77,7 +80,8 @@ public class InGameTimer : MonoBehaviour
         if (eTime >= 3430) // If 5th night/dawn has passed, end game
         {
             gameFinished = true;
-            inGameTimer_Text.enabled = false;
+            // Player won game!
+            gameResult.Setup(true);
         }
 
     }
