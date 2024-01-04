@@ -167,7 +167,6 @@ public class PlayerAttack : MonoBehaviour
     // Spawns an explosive arrow at the arrow spawn point
     private void SpawnExplosiveArrow()
     {
-        Debug.Log("spawning explosive arrow");
         ExplosiveArrow currentArrow = Instantiate(explosiveArrowPrefab, arrowSpawnPoint);
         currentArrow.transform.localPosition = Vector3.zero;
         // Fire the arrow
