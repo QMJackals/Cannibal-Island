@@ -53,7 +53,6 @@ public class Arrow : MonoBehaviour
         if (didHit || !isFlying) return;
         arrowCollision();
 
-        Debug.Log("triggered by: " + other.name);
         transform.SetParent(other.transform);
 
         if (other.CompareTag(enemyTag))

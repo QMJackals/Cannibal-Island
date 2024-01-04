@@ -35,7 +35,7 @@ public class PauseMenu : MonoBehaviour
     void Stop()
     {
         PauseMenuCanvas.SetActive(true);
-            Time.timeScale = 0f;
+        Time.timeScale = 0f;
         Paused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
