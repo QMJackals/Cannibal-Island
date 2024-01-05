@@ -112,10 +112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 9188408705446078420}
   speed: 12
-  gravity: -9.81
+  gravity: -20
   groundCheck: {fileID: 3413049053915866454}
   groundDistance: 0.4
-  jumpHeight: 3
+  jumpHeight: 5
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -191,9 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2353bec19de14c629d436ed32788318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameResult: {fileID: 0}
   damageDelay: 0.8
   damageDuration: 0.4
-  loseText: {fileID: 0}
 --- !u!114 &2584030232540370671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryText: {fileID: 0}
+  currentSelectionText: {fileID: 0}
 --- !u!1 &943535864661246584
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,8 +938,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1976b04e147a47c408bfdb3a2202d097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSentivityDefault: 500
   mouseSentivity: 500
   playerBody: {fileID: 7403621391407458581}
+  slider: {fileID: 0}
 --- !u!1 &6718637034744306941
 GameObject:
   m_ObjectHideFlags: 0
