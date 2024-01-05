@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount) {
         currentHealth -= amount;
-        gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.cyan);
+        gameObject.GetComponent<Renderer>().material.SetColor("_Color", new Color32(224,106,95,1));
 
         if (currentHealth <= 0) {
             Death();
