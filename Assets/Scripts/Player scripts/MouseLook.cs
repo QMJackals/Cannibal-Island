@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class MouseLook : MonoBehaviour
 {
 
-    public float mouseSentivity = 500f;
+    public float mouseSentivityDefault = 500f;
+    public float mouseSentivity;
 
     //a reference from the main camera to our entire first person player object so that we can rotate around
     public Transform playerBody;
@@ -19,7 +20,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        mouseSentivity = PlayerPrefs.GetFloat("currentSensitivity", 500);
+        mouseSentivity = PlayerPrefs.GetFloat("currentSensitivity", mouseSentivityDefault);
         slider.value = mouseSentivity / 10;
     }
 
