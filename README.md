@@ -1,17 +1,21 @@
 # Cannibal Island
 ### Credits
-This game was designed and created by Mohammed Abubakar, Yesh Chandiramani, Supachai Mangkud, and Paul-Sebastian Niga
+This game was designed and developed by Mohammed Abubakar, Yesh Chandiramani, Supachai Mangkud, and Paul-Sebastian Niga
 
-### How to Play
-- WASD for player movement
-- Spacebar to jump
-- Mouse/Trackpad cursor for rotating the camera field of view
-- Mouse/Trackpad **Left Click** for melee combat
-- Mouse/Trackpad **Right Click** for range combat
+### Story
+You find yourself stranded on a deserted island, equipped with only a simple knife and a makeshift bow. After aimlessly wandering around for a few days, you establish a campsite and set up an SOS signal - in the hope that passing ships may rescue you. The island seems relatively peaceful during the day, but come nightfall, the babaric inhabitants roam the land and have only one thing on their mind - fresh meat. Defend yourself against the relentless cannibal horde and survive long enough for the much-anticipated rescue. Don't waste daylight - navigate your surroundings and explore the expanses to uncover the hidden secrets that reveal the terrifying past of **Cannibal Island**. 
+
+*Just be sure not to become part of it...*
 
 ### Where to Play
 - The prototype **(v0.3)** can be played **[here](https://qmjackals.github.io/Cannibal-Island-Builds/v0.3/)**.
-- The current, up-to-date build **(v0.5)** can be played **[here](https://qmjackals.github.io/Cannibal-Island-Builds/v0.5/)**.
+- The current, up-to-date build **(v1.0)** can be played **[here](https://qmjackals.github.io/Cannibal-Island-Builds/v1.0/)**.
 
-### Story
-You are stranded on a seemingly deserted island with only a bow, knife, and arrows. You have to survive until the rescue ship comes by. During the day, you are safe; but at night, the Cannibals who inhabit the island come for you. Your mission is to defend yourself against the Cannibals and survive long enough to get on the rescue ship. Good luck and see you on the other side!
+### How to Play
+- **WASD** for player movement
+- **Spacebar** to jump
+- Mouse/Trackpad for rotating the camera field of view
+- **Left Click** for melee combat
+- **Right Click** for ranged combat
+- **R** to swap ranged ammo type
+  
